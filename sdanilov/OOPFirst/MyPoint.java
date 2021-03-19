@@ -2,26 +2,26 @@ package sdanilov.OOPFirst;
 
 public class MyPoint {
 
-    private int x = 0;
-    private int y = 0;
+    private float x = 0;
+    private float y = 0;
 
     public MyPoint(){}
 
-    public MyPoint(int x, int y){
+    public MyPoint(float x, float y){
         this.x = x;
         this.y = y;
     }
     
-    public int getX() {
+    public float getX() {
         return x;
     }
 
-    public int getY() {
+    public float getY() {
         return y;
     }
 
-    public int[] getXY(){
-        return new int[]{x,y};
+    public float[] getXY(){
+        return new float[]{x,y};
     }
 
     public void setX(int x) {
@@ -37,7 +37,7 @@ public class MyPoint {
         this.y = y;
     }
       
-    public double distance(int x, int y){
+    public double distance(float x, float y){
         return Math.sqrt(Math.pow(this.x-x, 2)+Math.pow(this.y-y, 2));
     }
 
@@ -51,7 +51,7 @@ public class MyPoint {
 
     @Override
     public String toString() {
-        return String.format("(%d,%d)", x, y);
+        return String.format("(%f,%f)", x, y);
     }
 
 }

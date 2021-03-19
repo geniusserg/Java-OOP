@@ -1,5 +1,7 @@
-import sdanilov.OOPFirst.*;
+package sdanilov;
 
+import sdanilov.OOPFirst.*;
+import sdanilov.OOPSecond.*;
 
 public class main{
     public static void main(String[] args){
@@ -19,6 +21,8 @@ public class main{
         System.out.print(b);
         // *****************************
 
+        MyComplex mc = new MyComplex(9,-8);
+        System.out.println(mc.divide(mc).conjugate().add(mc).argument());
     }
 }
 
