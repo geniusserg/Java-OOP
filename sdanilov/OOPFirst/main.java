@@ -1,9 +1,6 @@
-package sdanilov;
+package sdanilov.OOPFirst;
 
-import sdanilov.OOPFirst.*;
-import sdanilov.OOPSecond.*;
-
-public class main{
+public class main {
     public static void main(String[] args){
         // OOP First Homework Check
         Circle c = new Circle();
@@ -20,9 +17,5 @@ public class main{
         MyTriangle t2 = new MyTriangle(a1, a2, a3);
         System.out.print(b);
         // *****************************
-
-        MyComplex mc = new MyComplex(9,-8);
-        System.out.println(mc.divide(mc).conjugate().add(mc).argument());
     }
 }
-
