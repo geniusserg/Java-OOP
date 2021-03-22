@@ -5,7 +5,7 @@ package sdanilov.OOPSecond;
  * 
  * Author: Danilov Sergey
  * 
- * Date: 3/19/2021
+ * Date: 3/22/2021
  */
 
 public class main {
@@ -17,12 +17,13 @@ public class main {
         System.out.println(mp);
         System.out.println(mp.multiply(mp).multiply(mp));
 
-        /* Ball and Container */
+        /* Ball and Container testing*/
 
         Ball ball = new Ball(8,9,7);
         Container ct = new Container(0, 0, 100, 100);
         System.out.println(ct.collides(ball));
-        ball.setSpeedVector(7, 30);
+        ball.setSpeed(7);
+        ball.setDirection(80);
         ball.move();
         ball.putInContainer(ct);
         System.out.println(ball);

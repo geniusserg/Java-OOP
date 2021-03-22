@@ -5,7 +5,7 @@ package sdanilov.OOPSecond;
  * 
  * Author: Danilov Sergey
  * 
- * Date: 3/19/2021
+ * Date: 3/22/2021
  */
 
 public class Ball {
@@ -111,7 +111,7 @@ public class Ball {
      * @param ballDirection
      * @return
      */
-    public Ball setSpeedVector(int speed, int ballDirection){
+    private Ball setSpeedVector(int speed, int ballDirection){
         double direction = Math.toRadians(ballDirection);
         this.xDelta = (float)(speed*Math.cos(direction));
         this.yDelta = -(float)(speed*Math.sin(direction));
@@ -119,9 +119,9 @@ public class Ball {
     }
 
     /**
-     * Try to put ball in the container
+     * Try to put ball in the container (I decided to add it to connect Ball with Container)
      * If ball is already in contanier, just update container variable
-     * Else if ball can be put in container, checnge coordinates of ball 
+     * Else if ball can be put in container, change coordinates of ball 
      * Else we can not put ball in container
      * @param container
      * @return
