@@ -1,5 +1,13 @@
 package sdanilov.OOPFirst;
 
+/**
+ * Class: Circle
+ * 
+ * Author: Danilov Sergey
+ * 
+ * Date: 3/19/2021
+ */
+
 public class Circle {
     private double radius = 1.0;
     private String color = "red";

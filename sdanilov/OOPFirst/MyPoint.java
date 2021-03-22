@@ -1,5 +1,13 @@
 package sdanilov.OOPFirst;
 
+/**
+ * Class: MyPoint
+ * 
+ * Author: Danilov Sergey
+ * 
+ * Date: 3/19/2021
+ */
+
 public class MyPoint {
 
     private float x = 0;

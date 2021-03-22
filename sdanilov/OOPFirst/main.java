@@ -1,8 +1,16 @@
 package sdanilov.OOPFirst;
 
+/**
+ * Function main for testing OOPFirst classes
+ * 
+ * Author: Danilov Sergey
+ * 
+ * Date: 3/19/2021
+ */
+
 public class main {
     public static void main(String[] args){
-        // OOP First Homework Check
+        System.out.println("OOP First homework");
         Circle c = new Circle();
         Rectangle r = new Rectangle();
         Employee e = new Employee(5, "Jack", "Nilson", 90);
@@ -15,7 +23,7 @@ public class main {
         MyPoint a2 = new MyPoint(8,9);
         MyPoint a3 = new MyPoint(0,9); 
         MyTriangle t2 = new MyTriangle(a1, a2, a3);
+        System.out.println(t2.equals(tr));
         System.out.print(b);
-        // *****************************
     }
 }

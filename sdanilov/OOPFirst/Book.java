@@ -1,5 +1,12 @@
 package sdanilov.OOPFirst;
 
+/**
+ * Class: Book
+ * 
+ * Author: Danilov Sergey
+ * 
+ * Date: 3/19/2021
+ */
 public class Book {
 
     String name;

@@ -29,16 +29,29 @@ public class Container {
         return x2-x1;
     }
 
+    /**
+     * Is the ball in the container?
+     * @param ball
+     * @return
+     */
     public boolean collides(Ball ball){
-        return ((ball.getX()+(float)ball.getRadius() < x2)
-                 && (ball.getX()-(float)ball.getRadius() > x1)
-                 && (ball.getY()+(float)ball.getRadius() < y2)
-                 && (ball.getY()-(float)ball.getRadius() > y1));
+        return ((ball.getX()+(float)ball.getRadius() <= x2)
+                 && (ball.getX()-(float)ball.getRadius() >= x1)
+                 && (ball.getY()+(float)ball.getRadius() <= y2)
+                 && (ball.getY()-(float)ball.getRadius() >= y1));
     }
 
     @Override
     public String toString() {
         return String.format("Container[(%f,%f) , (%f,%f)]", x1, y1, x2, y2);
+    }
+
+    /**
+     * Put the ball in this conatiner
+     * See definition putInContainer in Ball class
+     */
+    public boolean addBall(Ball ball){
+        return ball.putInContainer(this);
     }
 
 

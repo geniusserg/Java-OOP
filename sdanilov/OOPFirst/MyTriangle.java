@@ -1,5 +1,13 @@
 package sdanilov.OOPFirst;
 
+/**
+ * Class: MyTriangle
+ * 
+ * Author: Danilov Sergey
+ * 
+ * Date: 3/19/2021
+ */
+
 import javax.management.RuntimeErrorException;
 
 public class MyTriangle {

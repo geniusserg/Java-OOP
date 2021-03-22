@@ -14,17 +14,29 @@ public class Ball {
     private int radius;
     private float xDelta;
     private float yDelta;
+    private Container container;
+    private int speed; /** needed for recalculating of speed vector */
+    private int degree; /** needed for recalculating of speed vector */
 
-    public Ball(float x, float y, int radius, int speed, int ballDirection){
+    /**
+     * Constructor of Ball class
+     * 
+     * I decided to delete params speed and ballDirection from constructor
+     * because it can be defined only before action move (logically), not in the initialization
+     * So, by my design, we will use ball so: ball.setSpeedVector(7, 90).move()
+     * where 7 is speed and degree of ball direction is 90
+     * 
+     */
+    public Ball(float x, float y, int radius){
         this.x = x;
         this.y = y;
         this.radius = radius;
-        double direction = Math.toRadians(ballDirection);
-        this.xDelta = (float)(speed*Math.cos(direction));
-        this.yDelta = -(float)(speed*Math.sin(direction));
+        this.speed = 0;
+        this.degree = 0;
     }
+
     /**
-     * Move ball on dX and dY
+     * Move ball on dX and dY, consuming clushes
      */
     public void move(){
         this.x += xDelta;
@@ -85,13 +97,50 @@ public class Ball {
         this.y = y;
     }
 
-    public void setxDelta(float xDelta) {
-        this.xDelta = xDelta;
+    public void setSpeed(int speed){
+        setSpeedVector(speed, this.degree);
     }
 
-    public void setyDelta(float yDelta) {
-        this.yDelta = yDelta;
+    public void setDirection(int degree){
+        setSpeedVector(this.speed, degree);
     }
 
+    /**
+     * Set speed and direction of movement. Calculate dX and dY
+     * @param speed
+     * @param ballDirection
+     * @return
+     */
+    public Ball setSpeedVector(int speed, int ballDirection){
+        double direction = Math.toRadians(ballDirection);
+        this.xDelta = (float)(speed*Math.cos(direction));
+        this.yDelta = -(float)(speed*Math.sin(direction));
+        return this;
+    }
+
+    /**
+     * Try to put ball in the container
+     * If ball is already in contanier, just update container variable
+     * Else if ball can be put in container, checnge coordinates of ball 
+     * Else we can not put ball in container
+     * @param container
+     * @return
+     */
+    public boolean putInContainer(Container container){
+        if (container.collides(this)){
+            this.container = container;
+        }
+        else if (container.collides(new Ball(container.getX()+radius,
+                                             container.getY()+radius, 
+                                             radius))){
+            this.x = container.getX()+radius;
+            this.y = container.getY()+radius;
+            this.container = container;
+        }
+        else{
+            return false;
+        }
+        return true;
+    }
 
 }
